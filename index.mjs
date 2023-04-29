@@ -1,3 +1,4 @@
+require = require('esm')(module);
 //Tensorflow
 import * as tf from '@tensorflow/tfjs';
 import * as knnClassifier from '@tensorflow-models/knn-classifier';
@@ -7,7 +8,6 @@ const webcamElement = document.getElementById("webcam")
 //Node.js 
 const fs = require('fs');
 const path = require('path');
-require = require('esm')(module);
 
 //?
 let net

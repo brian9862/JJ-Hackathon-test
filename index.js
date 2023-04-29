@@ -1,7 +1,11 @@
-require = require('esm')(module);
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+
 //Tensorflow
 import * as tf from '@tensorflow/tfjs';
 import * as knnClassifier from '@tensorflow-models/knn-classifier';
+import * as mobilenet from '@tensorflow-models/mobilenet';
+
 const classifier = knnClassifier.create()
 const webcamElement = document.getElementById("webcam")
 
@@ -13,11 +17,8 @@ const path = require('path');
 let net
 
 async function app() {
-  console.log("Loading mobilnet...")
-
+  
   net = await mobilenet.load()
-
-  console.log("Loaded model")
 
   const webcam = await tf.data.webcam(webcamElement)
     //function adds examples to ML classifier that will be trained using the MobileNet model.

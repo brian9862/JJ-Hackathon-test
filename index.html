@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- Load the latest version of TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+    <script type="module" src="index.js"></script>
+  </head>
+  <body>
+    <div id="console"></div>
+    <!-- Add an image that we will use to test -->
+    <video
+      autoplay
+      playsinline
+      muted
+      id="webcam"
+      width="400"
+      height="400" 
+    ></video>
+    <!--width and height were: "224"-->
+
+    <button id="Recycle">Add Recycle</button>
+    <button id="Garbage">Add Garbage</button>
+    <button id="Composte">Add Composte</button>
+    <!-- Load index.js after the content of the page -->
+    <script src="index.js"></script>
+  </body>
+</html>
